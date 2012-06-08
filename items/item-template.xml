@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<item>
+    <title>Template</title>
+    <timestamp>1339109630</timestamp>
+    <content><![CDATA[
+    <!-- html content goes here (i.e. <p>, <img>, <a>, etc.) remove this comment -->
+    <p>this is only a template</p>
+    ]]></content>
+</item>

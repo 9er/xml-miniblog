@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+    <title></title>
+    <footer><![CDATA[<p>xmlblog&sbsp;&dash;&nbsp;<a href="https://github.com/9er/xmlblog">fork me on github</a></p>]]></footer>
+    <link>http://example.com/</link>
+    <feed_items>50</feed_items>
+    <language>
+        <pagekey>page</pagekey>
+        <postkey>post</postkey>
+        <label_nextposts>newer posts</label_nextposts>
+        <label_prevposts>older posts</label_prevposts>
+        <label_entries>entries</label_entries>
+    </language>
+</settings>
