@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <settings>
     <title></title>
-    <footer><![CDATA[<p>xmlblog&sbsp;&dash;&nbsp;<a href="https://github.com/9er/xmlblog">fork me on github</a></p>]]></footer>
+    <footer><![CDATA[<p>xmlblog&sbsp;&dash;&nbsp;<a href="https://github.com/9er/xml-miniblog">fork me on github</a></p>]]></footer>
     <link>http://example.com/</link>
     <feed_items>50</feed_items>
     <language>
