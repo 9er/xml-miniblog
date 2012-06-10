@@ -72,7 +72,10 @@ except:
 
 items = []
 files = []
-dirlist = listdir(ITEM_PATH)
+try:
+    dirlist = listdir(ITEM_PATH)
+except OSError:
+    dirlist = []
 for item in dirlist:
     if item[-4:] == ".xml" and not path.isdir(path.join(ITEM_PATH, item)):
         files.append(item)
@@ -82,8 +85,10 @@ entries_total = len(files)
 for xmlfile in files[:feed_items]:
     items.append(parse(path.join(ITEM_PATH, xmlfile)))
 
-last_update = int(getNodeText(items[0], "timestamp"))
-
+try:
+    last_update = int(getNodeText(items[0], "timestamp"))
+except IndexError:
+    last_update = 0
 
 print("""<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
