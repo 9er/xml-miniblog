@@ -103,7 +103,7 @@ for item in items:
     pageurl = link + "index.cgi?" + postkey + "=" + getURL(date, getNodeText(item, "title"))
     feedurl = link + "feed.cgi"
     print("        <title>" + getNodeText(item, "title") + "</title>")
-    print("        <link rel=\"self\" type=\"application/atom+xml\">" + feedurl + "\" />")
+    print("        <link rel=\"self\" type=\"application/atom+xml\" href=\"" + feedurl + "\" />")
     print("        <link rel=\"alternate\" type=\"text/html\" href=\"" + pageurl + "\" />")
     print("        <updated>" + isotime(getNodeText(item, "timestamp")) + "</updated>")
     print("        <published>" + isotime(getNodeText(item, "timestamp")) + "</published>")
