@@ -107,7 +107,7 @@ for item in items:
     print("        <link rel=\"alternate\" type=\"text/html\" href=\"" + pageurl + "\" />")
     print("        <updated>" + isotime(getNodeText(item, "timestamp")) + "</updated>")
     print("        <published>" + isotime(getNodeText(item, "timestamp")) + "</published>")
-    print("        <content type=\"html\" xml:base=\"" + url + "\"><![CDATA[" + getNodeText(item, "content") + "]]></content>")
+    print("        <content type=\"html\" xml:base=\"" + pageurl + "\"><![CDATA[" + getNodeText(item, "content") + "]]></content>")
     print("    </entry>")
 
 print("""
