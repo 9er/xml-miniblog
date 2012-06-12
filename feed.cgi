@@ -29,7 +29,7 @@ def getURL(date, title):
 
 ITEM_PATH = "items"
 
-print "Content-Type: text/html"
+print "Content-Type: application/atom+xml"
 print
 
 settings = parse("settings.xml")
@@ -100,9 +100,11 @@ print("""<?xml version="1.0" encoding="utf-8"?>
 for item in items:
     print("    <entry>")
     date = nicedate(getNodeText(item, "timestamp"))
-    url = link + "?" + postkey + "=" + getURL(date, getNodeText(item, "title"))
+    pageurl = link + "index.cgi?" + postkey + "=" + getURL(date, getNodeText(item, "title"))
+    feedurl = link + "feed.cgi"
     print("        <title>" + getNodeText(item, "title") + "</title>")
-    print("        <link rel=\"alternate\" type=\"text/html\" href=\"" + url + "\" />")
+    print("        <link rel=\"self\" type=\"application/atom+xml\">" + feedurl + "\" />")
+    print("        <link rel=\"alternate\" type=\"text/html\" href=\"" + pageurl + "\" />")
     print("        <updated>" + isotime(getNodeText(item, "timestamp")) + "</updated>")
     print("        <published>" + isotime(getNodeText(item, "timestamp")) + "</published>")
     print("        <content type=\"html\" xml:base=\"" + url + "\"><![CDATA[" + getNodeText(item, "content") + "]]></content>")
