@@ -39,7 +39,7 @@ print
 
 
 ################
-# PARSE CONFIC #
+# PARSE CONFIG #
 ################
 settings = parse("settings.xml")
 try:
