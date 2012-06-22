@@ -34,8 +34,8 @@ ITEM_PATH = "items"
 print "Content-Type: application/atom+xml"
 print
 
-uri = "".join(environ["HTTP_HOST"], environ["REQUEST_URI"])
-"/".join(uri.split("/")[:-1]) + "/"
+uri = "".join([environ["HTTP_HOST"], environ["REQUEST_URI"]])
+uri = "http://" + "/".join(uri.split("/")[:-1]) + "/"
 
 settings = parse("settings.xml")
 try:
