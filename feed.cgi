@@ -34,6 +34,9 @@ ITEM_PATH = "items"
 print "Content-Type: application/atom+xml"
 print
 
+uri = "".join(environ["HTTP_HOST"], environ["REQUEST_URI"])
+"/".join(uri.split("/")[:-1]) + "/"
+
 settings = parse("settings.xml")
 try:
     lang = settings.getElementsByTagName("language")[0]
@@ -64,10 +67,6 @@ try:
 except:
     title = "[no title set]"
 try:
-    link = getNodeText(settings, "link")
-except:
-    link = ""
-try:
     feed_items = int(getNodeText(settings, "title"))
 except:
     feed_items = 50
@@ -96,14 +95,14 @@ print("""<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>""" + title + """</title>
     <updated>""" + isotime(last_update) + """</updated>
-    <icon>""" + link + """favicon.ico</icon>
+    <icon>""" + uri + """favicon.ico</icon>
 """)
 
 for item in items:
     print("    <entry>")
     date = nicedate(getNodeText(item, "timestamp"))
-    pageurl = link + "index.cgi?" + postkey + "=" + getURL(date, getNodeText(item, "title"))
-    feedurl = link + "feed.cgi"
+    pageurl = uri + "index.cgi?" + postkey + "=" + getURL(date, getNodeText(item, "title"))
+    feedurl = uri + "feed.cgi"
     print("        <title>" + getNodeText(item, "title") + "</title>")
     print("        <link rel=\"self\" type=\"application/atom+xml\" href=\"" + feedurl + "\" />")
     print("        <link rel=\"alternate\" type=\"text/html\" href=\"" + pageurl + "\" />")
