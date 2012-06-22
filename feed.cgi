@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from xml.dom.minidom import parse
-from os import path, listdir
+from os import path, listdir, environ
 from urllib import quote_plus
 from datetime import datetime
 from re import sub
