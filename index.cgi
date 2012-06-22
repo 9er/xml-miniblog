@@ -181,7 +181,7 @@ print("""
 for item in items:
     date = nicedate(getNodeText(item, "timestamp"))
     url = postkey + "=" + getURL(date, getNodeText(item, "title"))
-    print("        <li><a href=\"?" + url + "\"><p class=\"listdate\">" + getNodeText(item, "date") + "</p><p class=\"listtitle\">" + getNodeText(item, "title") + "</p></a></li>")
+    print("        <li><a href=\"?" + url + "\"><p class=\"listdate\">" + date + "</p><p class=\"listtitle\">" + getNodeText(item, "title") + "</p></a></li>")
 
 print("""
     </ul>
