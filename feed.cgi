@@ -22,7 +22,9 @@ def isotime(timestamp):
     return datetime.utcfromtimestamp(int(timestamp)).isoformat() + "Z"
 
 def nicedate(timestamp):
-    return datetime.fromtimestamp(int(timestamp)).strftime("%d.%m.%Y")
+    date = datetime.fromtimestamp(int(timestamp))
+    monthname = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"][date.month - 1]
+    return "".join([str(date.day), ". ", monthname, " ", str(date.year)])
 
 def getURL(date, title):
     return sub(r"\W+", "-", date + " " + title)
